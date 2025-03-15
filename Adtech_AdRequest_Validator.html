@@ -33,6 +33,9 @@
             <option value="tvos">tvOS</option>
             <option value="firetv">fireTV</option>
             <option value="roku">Roku</option>
+            <option value="samsungtv">SamsungTV</option>
+            <option value="lg">LGTV</option>
+            <option value="xbox">XBox</option>
           </select>
         </div>
         <div class="col-md-4">
@@ -101,7 +104,14 @@
                   width: 150px;
                 "
               >
-                <h6 style="margin: 0; padding: 0; text-align: left">
+                <h6
+                  style="
+                    margin: 0;
+                    padding: 0;
+                    text-align: left;
+                    font-weight: bold;
+                  "
+                >
                   AdrequestURL:
                 </h6>
               </td>
@@ -110,7 +120,7 @@
           <tbody>
             <tr>
               <td style="margin-right: 10px; padding: 5px; text-align: left">
-                <p id="myText" style="margin: 0; padding: 0; font-size: 12px">
+                <p id="myText" style="margin: 0; padding: 0; font-size: 16px">
                   <i>AdrequestURL will appear here</i>
                 </p>
               </td>
@@ -433,7 +443,7 @@
             },
 
             roku: {
-              playername: "BeamPlayerDesktop/5.10.0",
+              playername: "RokuPSDK/0.1.0",
               platform: "roku",
               metr: "1159",
               _fw_gdpr: "0",
@@ -441,7 +451,28 @@
                 AUS: {
                   csid: "apac/max/AU/ctv/roku",
                   prof: "386344:dni_max_apac_roku_vod_test",
-                  playername: "RokuPSDK/0.1.0",
+                },
+              },
+              kids: {
+                USA: {
+                  csid: "beam/app/android/phone",
+                  prof: "191700:beam_app_android_vod_test",
+                },
+                BR: {
+                  csid: "beam/app/android/phone",
+                  prof: "191700:beam_app_android_vod_test",
+                },
+              },
+            },
+            samsungtv: {
+              playername: "BeamPlayerTV/5.10.0",
+              platform: "samsungtv",
+              metr: "1159",
+              _fw_gdpr: "0",
+              adult: {
+                AUS: {
+                  csid: "apac/max/AU/ctv/samsungtv",
+                  prof: "386344:dni_max_apac_samsungtv_vod_test",
                 },
               },
               kids: {
