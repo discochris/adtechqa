@@ -65,7 +65,7 @@
 							"paln": null
 						}
 					},
-					"flag": "fbad scpv emcr sltp qtcb slcb aeti vicb dtrd",
+					"flag": " fbad scpv emcr sltp qtcb slcb aeti vicb dtrd",
 					"resp": "vmap1 vast4",
 					"mode": "on-demand"
 				},
@@ -148,6 +148,7 @@
 						"AUS": {
 							"csid": "apac/max/AU/app/android/phone",
 							"prof": "386344:dni_max_apac_android_vod_test",
+							"playername": "DiscoveryPlayerAndroidgooglePlay/5.10.0",
 						},
 						"_fw_coppa": "0",
 						"restrictedProfile": "0"
@@ -396,9 +397,9 @@
 
 			var url = new URL(adUrl);
 			let search = new URLSearchParams(url.search);
-			let paramArr = ['nw', 'csid', 'caid', 'hostvalue', 'afid', 'pvrn', 'vprn', 'flag', 'metr', 'prof', 'resp', 'vdur', 'vip', 'mode', '_fw_vcid2', 'accountid', '_fw_did', '_fw_h_user_agent', '_fw_h_referer', '_fw_coppa', 'restrictedProfile', '_fw_gdpr', '_fw_is_lat', '_fw_atts', '_fw_us_privacy', 'preroll', 'product', 'paln', 'platform', 'program_id', 'playbackId', 'playername', '_fw_nielsen_app_id', 'ptgt', 'tpcl', 'cpsq', 'tpos', 'novpaid', '_fw_cookie_consent', '_fw_gdpr_consent'];
+			let paramArr = ['nw', 'csid', 'caid', 'hostvalue', 'afid', 'pvrn', 'vprn', 'flag', 'metr', 'prof', 'resp', 'vdur', 'vip', 'mode', ';_fw_vcid2', 'accountid', '_fw_did', '_fw_h_user_agent', '_fw_h_referer', '_fw_coppa', 'restrictedProfile', '_fw_gdpr', '_fw_is_lat', '_fw_atts', 'preroll', 'product', 'paln', 'platform', 'program_id', 'playbackId', 'playername', '_fw_nielsen_app_id', 'ptgt', 'tpcl', 'cpsq', 'tpos', 'novpaid', '_fw_cookie_consent', '_fw_gdpr_consent'];
 			//let paramArr = ['_fw_coppa','restrictedProfile'];
-			let paramForValidation = ['nw', 'csid', 'hostvalue', 'afid', 'flag', 'metr', 'prof', 'resp', 'mode', '_fw_vcid2', '_fw_coppa', 'restrictedProfile', '_fw_gdpr', '_fw_is_lat', '_fw_atts', '_fw_us_privacy', 'platform', 'playername']
+			let paramForValidation = ['nw', 'csid', 'hostvalue', 'afid', 'flag', 'metr', 'prof', 'resp', 'mode', '_fw_coppa', 'restrictedProfile', '_fw_gdpr', '_fw_is_lat', '_fw_atts', 'platform', 'playername']
 
 
 
@@ -413,6 +414,10 @@
 				let expectedParam;
 				if (search.has(paramArr[i])) {
 					if (adRequestParam === 'vprn') {
+						let data = search.get(adRequestParam);
+						actualParamValue = data.split(';')[0];
+					}
+					else if (adRequestParam === 'flag') {
 						let data = search.get(adRequestParam);
 						actualParamValue = data.split(';')[0];
 					}
