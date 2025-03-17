@@ -36,6 +36,10 @@
             <option value="samsungtv">SamsungTV</option>
             <option value="lg">LGTV</option>
             <option value="xbox">XBox</option>
+            <option value="chromecast_web">ChromeCast_WEB</option>
+            <option value="foxtel">Foxtel</option>
+            <option value="safari">Safari</option>
+            <option value="firetab">FireTab</option>
           </select>
         </div>
         <div class="col-md-4">
@@ -151,7 +155,7 @@
             <!-- S.No -->
             <col style="width: 200px" />
             <!-- Parameter -->
-            <col style="width: 250px" />
+            <col style="width: 150px" />
             <!-- Actual Value -->
             <col style="width: 250px" />
             <!-- Expected Value -->
@@ -315,7 +319,7 @@
                 },
                 AUS: {
                   playername: "BeamPlayerDesktop/5.10.0",
-                  csid: "apac/max/AU/web/desktop",
+                  csid: "apac/max/AU/web/desktop/kids",
                   prof: "386344:dni_max_apac_web_vod_test",
                 },
                 BR: {
@@ -356,6 +360,7 @@
                   csid: "beam/app/android/phone",
                   prof: "191700:beam_app_android_vod_test",
                 },
+
               },
             },
 
@@ -464,6 +469,7 @@
                 },
               },
             },
+
             samsungtv: {
               playername: "BeamPlayerTV/5.10.0",
               platform: "samsungtv",
@@ -486,6 +492,114 @@
                 },
               },
             },
+
+            chromecast_web: {
+              playername: "",
+              platform: "chromecast",
+              metr: "1159",
+              _fw_gdpr: "0",
+              adult: {
+                AUS: {
+                  csid: "apac/max/AU/ctv/chromecast",
+                  prof: "386344:dni_max_apac_chromecast_vod_test",
+                  playername: "MaxPlayerChromecast/5.9.0",
+                },
+              },
+              kids: {
+              	AUS: {
+                  csid: "apac/max/AU/ctv/chromecast",
+                  prof: "386344:dni_max_apac_chromecast_vod_test",
+                  playername: "MaxPlayerChromecast/5.9.0",
+                },
+                USA: {
+                  csid: "beam/app/android/phone",
+                  prof: "191700:beam_app_android_vod_test",
+                },
+                BR: {
+                  csid: "beam/app/android/phone",
+                  prof: "191700:beam_app_android_vod_test",
+                },
+              },
+            },
+
+            foxtel: {
+              playername: "",
+              platform: "foxteliq",
+              metr: "1159",
+              _fw_gdpr: "0",
+              adult: {
+                AUS: {
+                  csid: "apac/max/AU/ctv/foxteliq",
+                  prof: "386344:dni_max_apac_foxteliq_vod_test",
+                  playername: "BeamPlayerSTB/5.10.0",
+                },
+              },
+              kids: {
+              	AUS: {
+                  csid: "apac/max/AU/ctv/foxteliq",
+                  prof: "386344:dni_max_apac_foxteliq_vod_test",
+                  playername: "BeamPlayerSTB/5.10.0",
+                },
+                USA: {
+                  csid: "beam/app/android/phone",
+                  prof: "191700:beam_app_android_vod_test",
+                },
+                BR: {
+                  csid: "beam/app/android/phone",
+                  prof: "191700:beam_app_android_vod_test",
+                },
+              },
+            },
+
+            safari: {
+              playername: "",
+              platform: "web",
+              metr: "135",
+              _fw_gdpr: "0",
+              adult: {
+                AUS: {
+                  csid: "apac/max/AU/web/desktop",
+                  prof: "386344:dni_max_apac_web_vod_test",
+                  playername: "BeamPlayerDesktop/5.10.0",
+                },
+              },
+              kids: {
+                USA: {
+                  csid: "beam/app/android/phone",
+                  prof: "191700:beam_app_android_vod_test",
+                },
+                BR: {
+                  csid: "beam/app/android/phone",
+                  prof: "191700:beam_app_android_vod_test",
+                },
+              },
+            },
+
+            firetab: {
+              playername: "",
+              platform: "android",
+              metr: "135",
+              _fw_gdpr: "0",
+              adult: {
+                AUS: {
+                  csid: "apac/max/AU/app/android/phone",
+                  prof: "386344:dni_max_apac_android_vod_test",
+                  playername: "DiscoveryPlayerAndroidgooglePlay/5.10.0",
+                },
+              },
+              kids: {
+                USA: {
+                  csid: "beam/app/android/phone",
+                  prof: "191700:beam_app_android_vod_test",
+                },
+                BR: {
+                  csid: "beam/app/android/phone",
+                  prof: "191700:beam_app_android_vod_test",
+                },
+              },
+            },
+
+
           },
         };
 
