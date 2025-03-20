@@ -28,18 +28,20 @@
           <label for="device" class="form-label">Device</label>
           <select id="device" class="form-select">
             <option value="chrome">Chrome</option>
+            <option value="safari">Safari</option>
             <option value="android">Android</option>
+            <option value="firetab">FireTab</option>
             <option value="ios">iOS</option>
             <option value="tvos">tvOS</option>
             <option value="firetv">fireTV</option>
+            <option value="androidtv">androidtv</option>
             <option value="roku">Roku</option>
             <option value="samsungtv">SamsungTV</option>
-            <option value="lg">LGTV</option>
+            <option value="lgtv">LGTV</option>
             <option value="xbox">XBox</option>
-            <option value="chromecast_web">ChromeCast_WEB</option>
             <option value="foxtel">Foxtel</option>
-            <option value="safari">Safari</option>
-            <option value="firetab">FireTab</option>
+            <option value="playstation">playstation</option>
+            <option value="chromecast">ChromeCast</option>
           </select>
         </div>
         <div class="col-md-4">
@@ -135,6 +137,18 @@
 
       <div class="table-responsive">
         <table class="table table-bordered table-striped">
+          <colgroup>
+            <col style="width: 50px" />
+            <!-- S.No -->
+            <col style="width: 200px" />
+            <!-- Parameter -->
+            <col style="width: 150px" />
+            <!-- Actual Value -->
+            <col style="width: 250px" />
+            <!-- Expected Value -->
+            <col style="width: 100px" />
+            <!-- Status -->
+          </colgroup>
           <thead class="table-dark">
             <tr>
               <th>S.No</th>
@@ -266,8 +280,8 @@
               hostvalue: "https://2ecd5.v.fwmrm.net",
             },
             AUS: {
-              nw: "386344",
-              afid: "388328657",
+              nw: "386345",
+              afid: "431029310",
               hostvalue: "https://5e529.v.fwmrm.net",
             },
             BR: {
@@ -298,34 +312,34 @@
                 USA: {
                   playername: "BeamPlayerDesktop",
                   csid: "beam/web/desktop",
-                  prof: "191700:beam_web_desktop_vod_test",
+                  prof: "191700:beam_web_desktop_vod_prod",
                 },
                 AUS: {
                   playername: "BeamPlayerDesktop/5.10.0",
                   csid: "apac/max/AU/web/desktop",
-                  prof: "386344:dni_max_apac_web_vod_test",
+                  prof: "386345:dni_max_apac_web_vod_prod",
                 },
                 BR: {
                   playername: "BeamPlayerDesktop",
                   csid: "beam/web/desktop",
-                  prof: "191700:beam_web_desktop_vod_test",
+                  prof: "191700:beam_web_desktop_vod_prod",
                 },
               },
               kids: {
                 USA: {
                   playername: "BeamPlayerDesktop",
                   csid: "kidsprofile/beam/web/desktop",
-                  prof: "191700:beam_web_desktop_vod_test",
+                  prof: "191700:beam_web_desktop_vod_prod",
                 },
                 AUS: {
                   playername: "BeamPlayerDesktop/5.10.0",
                   csid: "apac/max/AU/web/desktop/kids",
-                  prof: "386344:dni_max_apac_web_vod_test",
+                  prof: "386345:dni_max_apac_web_vod_prod",
                 },
                 BR: {
                   playername: "BeamPlayerDesktop",
                   csid: "kidsprofile/beam/web/desktop",
-                  prof: "191700:beam_web_desktop_vod_test",
+                  prof: "191700:beam_web_desktop_vod_prod",
                 },
               },
             },
@@ -339,26 +353,26 @@
               adult: {
                 USA: {
                   csid: "beam/app/android/phone",
-                  prof: "191700:beam_app_android_vod_test",
+                  prof: "191700:beam_app_android_vod_prod",
                 },
                 BR: {
                   csid: "beam/app/android/phone",
-                  prof: "191700:beam_app_android_vod_test",
+                  prof: "191700:beam_app_android_vod_prod",
                 },
                 AUS: {
                   csid: "apac/max/AU/app/android/phone",
-                  prof: "386344:dni_max_apac_android_vod_test",
+                  prof: "386345:dni_max_apac_android_vod_prod",
                   playername: "DiscoveryPlayerAndroidgooglePlay/5.10.0",
                 },
               },
               kids: {
                 USA: {
                   csid: "beam/app/android/phone",
-                  prof: "191700:beam_app_android_vod_test",
+                  prof: "191700:beam_app_android_vod_prod",
                 },
                 BR: {
                   csid: "beam/app/android/phone",
-                  prof: "191700:beam_app_android_vod_test",
+                  prof: "191700:beam_app_android_vod_prod",
                 },
 
               },
@@ -374,26 +388,26 @@
               adult: {
                 USA: {
                   csid: "beam/app/android/phone",
-                  prof: "191700:beam_app_android_vod_test",
+                  prof: "191700:beam_app_android_vod_prod",
                 },
                 BR: {
                   csid: "beam/app/android/phone",
-                  prof: "191700:beam_app_android_vod_test",
+                  prof: "191700:beam_app_android_vod_prod",
                 },
                 AUS: {
                   csid: "apac/max/AU/app/ios/phone",
-                  prof: "386344:dni_max_apac_ios_vod_test",
+                  prof: "386345:dni_max_apac_ios_vod_prod",
                   playername: "DiscoveryPlayeriosnative/1.0",
                 },
               },
               kids: {
                 USA: {
                   csid: "beam/app/android/phone",
-                  prof: "191700:beam_app_android_vod_test",
+                  prof: "191700:beam_app_android_vod_prod",
                 },
                 BR: {
                   csid: "beam/app/android/phone",
-                  prof: "191700:beam_app_android_vod_test",
+                  prof: "191700:beam_app_android_vod_prod",
                 },
               },
             },
@@ -407,18 +421,18 @@
               adult: {
                 AUS: {
                   csid: "apac/max/AU/ctv/tvos",
-                  prof: "386344:dni_max_apac_tvos_vod_test",
+                  prof: "386345:dni_max_apac_tvos_vod_prod",
                   playername: "DiscoveryPlayertvOSnative/1.0",
                 },
               },
               kids: {
                 USA: {
                   csid: "beam/app/android/phone",
-                  prof: "191700:beam_app_android_vod_test",
+                  prof: "191700:beam_app_android_vod_prod",
                 },
                 BR: {
                   csid: "beam/app/android/phone",
-                  prof: "191700:beam_app_android_vod_test",
+                  prof: "191700:beam_app_android_vod_prod",
                 },
               },
             },
@@ -431,18 +445,18 @@
               adult: {
                 AUS: {
                   csid: "apac/max/AU/ctv/firetv",
-                  prof: "386344:dni_max_apac_firetv_vod_test",
+                  prof: "386345:dni_max_apac_firetv_vod_prod",
                   playername: "DiscoveryPlayerAndroidfireTV/1.9.1-alpha.950",
                 },
               },
               kids: {
                 USA: {
                   csid: "beam/app/android/phone",
-                  prof: "191700:beam_app_android_vod_test",
+                  prof: "191700:beam_app_android_vod_prod",
                 },
                 BR: {
                   csid: "beam/app/android/phone",
-                  prof: "191700:beam_app_android_vod_test",
+                  prof: "191700:beam_app_android_vod_prod",
                 },
               },
             },
@@ -455,17 +469,17 @@
               adult: {
                 AUS: {
                   csid: "apac/max/AU/ctv/roku",
-                  prof: "386344:dni_max_apac_roku_vod_test",
+                  prof: "386345:dni_max_apac_roku_vod_prod",
                 },
               },
               kids: {
                 USA: {
                   csid: "beam/app/android/phone",
-                  prof: "191700:beam_app_android_vod_test",
+                  prof: "191700:beam_app_android_vod_prod",
                 },
                 BR: {
                   csid: "beam/app/android/phone",
-                  prof: "191700:beam_app_android_vod_test",
+                  prof: "191700:beam_app_android_vod_prod",
                 },
               },
             },
@@ -478,22 +492,21 @@
               adult: {
                 AUS: {
                   csid: "apac/max/AU/ctv/samsungtv",
-                  prof: "386344:dni_max_apac_samsungtv_vod_test",
+                  prof: "386345:dni_max_apac_samsungtv_vod_prod",
                 },
               },
               kids: {
                 USA: {
                   csid: "beam/app/android/phone",
-                  prof: "191700:beam_app_android_vod_test",
+                  prof: "191700:beam_app_android_vod_prod",
                 },
                 BR: {
                   csid: "beam/app/android/phone",
-                  prof: "191700:beam_app_android_vod_test",
+                  prof: "191700:beam_app_android_vod_prod",
                 },
               },
             },
-
-            chromecast_web: {
+            chromecast: {
               playername: "",
               platform: "chromecast",
               metr: "1159",
@@ -501,23 +514,23 @@
               adult: {
                 AUS: {
                   csid: "apac/max/AU/ctv/chromecast",
-                  prof: "386344:dni_max_apac_chromecast_vod_test",
+                  prof: "386345:dni_max_apac_chromecast_vod_prod",
                   playername: "MaxPlayerChromecast/5.9.0",
                 },
               },
               kids: {
               	AUS: {
                   csid: "apac/max/AU/ctv/chromecast",
-                  prof: "386344:dni_max_apac_chromecast_vod_test",
-                  playername: "MaxPlayerChromecast/5.9.0",
+                  prof: "386345:dni_max_apac_chromecast_vod_prod",
+                  playername: "MaxPlayerChromecast/5.1.0",
                 },
                 USA: {
                   csid: "beam/app/android/phone",
-                  prof: "191700:beam_app_android_vod_test",
+                  prof: "191700:beam_app_android_vod_prod",
                 },
                 BR: {
                   csid: "beam/app/android/phone",
-                  prof: "191700:beam_app_android_vod_test",
+                  prof: "191700:beam_app_android_vod_prod",
                 },
               },
             },
@@ -530,23 +543,23 @@
               adult: {
                 AUS: {
                   csid: "apac/max/AU/ctv/foxteliq",
-                  prof: "386344:dni_max_apac_foxteliq_vod_test",
+                  prof: "386345:dni_max_apac_foxteliq_vod_prod",
                   playername: "BeamPlayerSTB/5.10.0",
                 },
               },
               kids: {
               	AUS: {
                   csid: "apac/max/AU/ctv/foxteliq",
-                  prof: "386344:dni_max_apac_foxteliq_vod_test",
+                  prof: "386345:dni_max_apac_foxteliq_vod_prod",
                   playername: "BeamPlayerSTB/5.10.0",
                 },
                 USA: {
                   csid: "beam/app/android/phone",
-                  prof: "191700:beam_app_android_vod_test",
+                  prof: "191700:beam_app_android_vod_prod",
                 },
                 BR: {
                   csid: "beam/app/android/phone",
-                  prof: "191700:beam_app_android_vod_test",
+                  prof: "191700:beam_app_android_vod_prod",
                 },
               },
             },
@@ -559,42 +572,134 @@
               adult: {
                 AUS: {
                   csid: "apac/max/AU/web/desktop",
-                  prof: "386344:dni_max_apac_web_vod_test",
+                  prof: "386345:dni_max_apac_web_vod_prod",
                   playername: "BeamPlayerDesktop/5.10.0",
                 },
               },
               kids: {
                 USA: {
                   csid: "beam/app/android/phone",
-                  prof: "191700:beam_app_android_vod_test",
+                  prof: "191700:beam_app_android_vod_prod",
                 },
                 BR: {
                   csid: "beam/app/android/phone",
-                  prof: "191700:beam_app_android_vod_test",
+                  prof: "191700:beam_app_android_vod_prod",
                 },
               },
             },
 
             firetab: {
               playername: "",
-              platform: "android",
+              platform: "firetablet",
               metr: "135",
               _fw_gdpr: "0",
               adult: {
                 AUS: {
-                  csid: "apac/max/AU/app/android/phone",
-                  prof: "386344:dni_max_apac_android_vod_test",
-                  playername: "DiscoveryPlayerAndroidgooglePlay/5.10.0",
+                  csid: "apac/max/AU/app/firetablet",
+                  prof: "386345:dni_max_apac_firetablet_vod_prod",
+                  playername: "DiscoveryPlayerAndroidkindle/5.10.0",
                 },
               },
               kids: {
                 USA: {
                   csid: "beam/app/android/phone",
-                  prof: "191700:beam_app_android_vod_test",
+                  prof: "191700:beam_app_android_vod_prod",
                 },
                 BR: {
                   csid: "beam/app/android/phone",
-                  prof: "191700:beam_app_android_vod_test",
+                  prof: "191700:beam_app_android_vod_prod",
+                },
+              },
+            },
+            lgtv: {
+              playername: "",
+              platform: "lgtv",
+              metr: "1159",
+              _fw_gdpr: "0",
+              adult: {
+                AUS: {
+                  csid: "apac/max/AU/ctv/lgtv",
+                  prof: "386345:dni_max_apac_lgtv_vod_prod",
+                  playername: "BeamPlayerTV/5.10.0",
+                },
+              },
+              kids: {
+                USA: {
+                  csid: "beam/app/android/phone",
+                  prof: "191700:beam_app_android_vod_prod",
+                },
+                BR: {
+                  csid: "beam/app/android/phone",
+                  prof: "191700:beam_app_android_vod_prod",
+                },
+              },
+            },
+            xbox: {
+              playername: "",
+              platform: "xbox",
+              metr: "1159",
+              _fw_gdpr: "0",
+              adult: {
+                AUS: {
+                  csid: "apac/max/AU/ctv/xbox",
+                  prof: "386345:dni_max_apac_xbox_vod_prod",
+                  playername: "BeamPlayerConsole/5.10.0",
+                },
+              },
+              kids: {
+                USA: {
+                  csid: "beam/app/android/phone",
+                  prof: "191700:beam_app_android_vod_prod",
+                },
+                BR: {
+                  csid: "beam/app/android/phone",
+                  prof: "191700:beam_app_android_vod_prod",
+                },
+              },
+            },
+            playstation: {
+              playername: "",
+              platform: "playstation",
+              metr: "1159",
+              _fw_gdpr: "0",
+              adult: {
+                AUS: {
+                  csid: "apac/max/AU/ctv/playstation",
+                  prof: "386345:dni_max_apac_playstation_vod_prod",
+                  playername: "BeamPlayerConsole/5.10.0",
+                },
+              },
+              kids: {
+                USA: {
+                  csid: "beam/app/android/phone",
+                  prof: "191700:beam_app_android_vod_prod",
+                },
+                BR: {
+                  csid: "beam/app/android/phone",
+                  prof: "191700:beam_app_android_vod_prod",
+                },
+              },
+            },
+            androidtv: {
+              playername: "",
+              platform: "androidtv",
+              metr: "1159",
+              _fw_gdpr: "0",
+              adult: {
+                AUS: {
+                  csid: "apac/max/AU/ctv/androidtv",
+                  prof: "386345:dni_max_apac_androidtv_vod_prod",
+                  playername: "",
+                },
+              },
+              kids: {
+                USA: {
+                  csid: "beam/app/android/phone",
+                  prof: "191700:beam_app_android_vod_prod",
+                },
+                BR: {
+                  csid: "beam/app/android/phone",
+                  prof: "191700:beam_app_android_vod_prod",
                 },
               },
             },
@@ -863,6 +968,7 @@
           "restrictedProfile",
           "_fw_gdpr",
           "_fw_is_lat",
+          "_fw_atts",
           "platform",
           "playername",
         ];
@@ -874,6 +980,7 @@
           tvos: ["_fw_atts"],
           firetv: ["paln", "_fw_is_lat", "_fw_did"],
           roku: ["paln", "_fw_is_lat", "_fw_did"],
+          lgtv: ["_fw_is_lat", "_fw_did"],
         };
 
         const deviceSpecificValidationParams = {
