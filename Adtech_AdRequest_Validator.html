@@ -49,7 +49,7 @@
           <select id="profile" class="form-select">
             <option value="adult">Adult</option>
             <option value="kids">Kids</option>
-            <option value="adult on child">Adult on Child</option>
+            <option value="childcontent">Child asset on Adult profile</option>
           </select>
         </div>
       </div>
@@ -294,6 +294,10 @@
               _fw_coppa: "1",
               restrictedProfile: "1",
             },
+            childcontent: {
+              _fw_coppa: "1",
+              restrictedProfile: "1",
+            },
           },
 
           devices: {
@@ -339,6 +343,7 @@
               _fw_us_privacy: "1---",
               metr: "135",
               _fw_atts: "1",
+              wta: "1",
               adult: {
                 AUS: {
                   csid: "apac/max/AU/app/ios/phone",
@@ -580,12 +585,18 @@
           case "prof":
           case "playername":
           case "wta":
+
+            if (document.getElementById("profile").value === "childcontent" && adrequestParam === "csid"){
+              //profileName="adult";
+              expectedData = jsonData.devices[device]["adult"][region][adrequestParam];
+            } else{
             expectedData =
               jsonData.devices[device][profileName]?.[region]?.[
                 adrequestParam
               ] ||
               jsonData.devices[device][profileName]?.[adrequestParam] ||
               jsonData.devices[device][adrequestParam];
+              }
             break;
 
           case "flag":
@@ -614,11 +625,207 @@
 
           default:
             expectedData = jsonData.devices[device][adrequestParam] || null;
-            console.log("Expected data is " + expectedData);
         }
 
         return expectedData;
       };
+
+      const validateFwDidValue = (
+        actualParam,
+        actualParamValue,
+        expectedParamValue,
+        count,
+        table1,
+        rowrow,
+        fwDidStatus,
+        deviceAdTracking,
+        profileName,
+        device
+      ) => {
+        for (i = 0; i < 1; i++) {
+          var cell1 = document.createElement("td");
+          var text1 = document.createTextNode(count);
+
+          cell1.appendChild(text1);
+          rowrow.appendChild(cell1);
+
+          var cell2 = document.createElement("td");
+          var text2 = document.createTextNode(actualParam);
+
+          cell2.appendChild(text2);
+          rowrow.appendChild(cell2);
+
+          var cell3 = document.createElement("td");
+          var text3 = "";
+
+          
+
+          var cell4 = document.createElement("td");
+          var text4 = "";
+
+          var cell5 = document.createElement("td");
+          var text5 = "";
+          var bgColor = ""
+          if (fwDidStatus) {
+            if (deviceAdTracking === "disabled") {
+              text3 = "param is not present in the url";
+              text4 = "Empty/Null";
+              text5 = "PASS"
+              bgColor = "#6ae66a";
+            } 
+            if(profileName === 'kids'){
+              text3 = "param is not present in the url";
+              text4 = "Empty/Null";
+              text5 = "PASS"
+              bgColor = "#6ae66a";
+            } else if(['chrome','safari','chromecast','playstation','tvos','ios'].includes(device)){
+                text3 = "param is not present in the url";
+                text4 = "Empty/Null";
+                text5 = "PASS"
+                bgColor = "#6ae66a";
+            } else{
+                text3 = "param is not present in the url";
+                text4 = "Expected String/Numeric Value";
+                text5 = "FAIL"
+                bgColor = "red";
+            }
+          } 
+            else {
+              if (deviceAdTracking === "disabled") {
+              text3 = actualParamValue;
+                text4 = "Expected Empty Value";
+                text5 = "FAIL"
+                bgColor = "red";
+            } 
+            if(profileName === 'kids'){
+              text3 = actualParamValue;
+                text4 = "Expected Empty Value";
+                text5 = "FAIL"
+                bgColor = "red";
+            } else if(['chrome','safari','chromecast','playstation','tvos','ios'].includes(device)){
+                text3 = actualParamValue;
+                text4 = "Expected Empty Value";
+                text5 = "FAIL"
+                bgColor = "red";
+            } else if (actualParamValue) {
+                text3 = actualParamValue;
+                text4 = "Expected String/Numeric Value";
+                text5 = "PASS"
+                bgColor = "#6ae66a";
+              } else {
+                text3 = actualParamValue;
+                text4 = "Expected String/Numeric Value";
+                text5 = "FAIL"
+                bgColor = "red";
+              }
+            }
+            cell3.appendChild(document.createTextNode(text3));
+            rowrow.appendChild(cell3);
+
+            cell4.appendChild(document.createTextNode(text4));
+            rowrow.appendChild(cell4);
+
+            cell5.appendChild(document.createTextNode(text5));
+            cell5.style.backgroundColor = bgColor;
+            rowrow.appendChild(cell5);
+          
+        }
+        table1.appendChild(rowrow);
+      };
+
+      const validatePalnValue = (
+        actualParam,
+        actualParamValue,
+        expectedParamValue,
+        count,
+        table1,
+        rowrow,
+        fwDidStatus,
+        deviceAdTracking,
+        profileName,
+        device
+      ) => {
+        for (i = 0; i < 1; i++) {
+          var cell1 = document.createElement("td");
+          var text1 = document.createTextNode(count);
+
+          cell1.appendChild(text1);
+          rowrow.appendChild(cell1);
+
+          var cell2 = document.createElement("td");
+          var text2 = document.createTextNode(actualParam);
+
+          cell2.appendChild(text2);
+          rowrow.appendChild(cell2);
+
+          var cell3 = document.createElement("td");
+          var text3 = "";
+
+          
+
+          var cell4 = document.createElement("td");
+          var text4 = "";
+
+          var cell5 = document.createElement("td");
+          var text5 = "";
+          var bgColor = ""
+          if (fwDidStatus) {
+            if (deviceAdTracking === "disabled") {
+              text3 = "param is not present in the url";
+              text4 = "Empty/Null";
+              text5 = "PASS"
+              bgColor = "#6ae66a";
+            } 
+            if(profileName === 'kids'){
+              text3 = "param is not present in the url";
+              text4 = "Empty/Null";
+              text5 = "PASS"
+              bgColor = "#6ae66a";
+            }  else{
+                text3 = "param is not present in the url";
+                text4 = "Expected String/Numeric Value";
+                text5 = "FAIL"
+                bgColor = "red";
+            }
+          } 
+            else {
+              if (deviceAdTracking === "disabled") {
+              text3 = actualParamValue;
+                text4 = "Expected Empty Value";
+                text5 = "FAIL"
+                bgColor = "red";
+            } 
+            if(profileName === 'kids'){
+              text3 = actualParamValue;
+                text4 = "Expected Empty Value";
+                text5 = "FAIL"
+                bgColor = "red";
+            } else if (actualParamValue) {
+                text3 = actualParamValue;
+                text4 = "Expected String/Numeric Value";
+                text5 = "PASS"
+                bgColor = "#6ae66a";
+              } else {
+                text3 = actualParamValue;
+                text4 = "Expected String/Numeric Value";
+                text5 = "FAIL"
+                bgColor = "red";
+              }
+            }
+            cell3.appendChild(document.createTextNode(text3));
+            rowrow.appendChild(cell3);
+
+            cell4.appendChild(document.createTextNode(text4));
+            rowrow.appendChild(cell4);
+
+            cell5.appendChild(document.createTextNode(text5));
+            cell5.style.backgroundColor = bgColor;
+            rowrow.appendChild(cell5);
+          
+        }
+        table1.appendChild(rowrow);
+      };
+
 
       const validateParam = (
         actualParam,
@@ -660,33 +867,7 @@
           var cell5 = document.createElement("td");
           var text5 = "";
 
-          if (["_fw_did"].includes(actualParam)) {
-            if (deviceAdTracking === "disabled") {
-              if (!actualParamValue) {
-                text5 = document.createTextNode("PASS");
-                cell5.appendChild(text5);
-                rowrow.appendChild(cell5);
-                cell5.style.backgroundColor = "#6ae66a";
-              } else {
-                text5 = document.createTextNode("FAIL");
-                cell5.appendChild(text5);
-                rowrow.appendChild(cell5);
-                cell5.style.backgroundColor = "red";
-              }
-            } else if (deviceAdTracking === "enabled") {
-              if (actualParamValue) {
-                text5 = document.createTextNode("PASS");
-                cell5.appendChild(text5);
-                rowrow.appendChild(cell5);
-                cell5.style.backgroundColor = "#6ae66a";
-              } else {
-                text5 = document.createTextNode("FAIL");
-                cell5.appendChild(text5);
-                rowrow.appendChild(cell5);
-                cell5.style.backgroundColor = "red";
-              }
-            }
-          } else if (actualParamValue == expectedParamValue) {
+           if (actualParamValue == expectedParamValue) {
             text5 = document.createTextNode("PASS");
             cell5.appendChild(text5);
             rowrow.appendChild(cell5);
@@ -769,6 +950,10 @@
         let region = document.getElementById("Country").value;
         let appVersion = document.getElementById("appVersion").value;
 
+        if (profileName === "childcontent"){
+          profileName = "kids";
+        }
+
         document.getElementById("myText").innerHTML = adUrl;
 
         adUrl = adUrl.replace(/;ptgt/g, "&ptgt");
@@ -837,13 +1022,13 @@
         ];
 
         const deviceSpecificParams = {
-          chrome: ["_fw_cookie_consent", "paln", "_fw_is_lat"],
+          chrome: ["_fw_cookie_consent", "paln", "_fw_is_lat","_fw_did"],
           safari: ["_fw_cookie_consent", "paln", "_fw_is_lat"],
           android: ["paln", "_fw_is_lat", "_fw_did"],
           androidtv: ["paln", "_fw_is_lat", "_fw_did"],
           firetablet: ["paln", "_fw_is_lat", "_fw_did"],
-          ios: ["_fw_atts"],
-          tvos: ["_fw_atts"],
+          ios: ["_fw_atts","_fw_did"],
+          tvos: ["_fw_atts","_fw_did"],
           firetv: ["paln", "_fw_is_lat", "_fw_did"],
           roku: ["paln", "_fw_is_lat", "_fw_did"],
           lgtv: ["_fw_is_lat", "_fw_did"],
@@ -872,23 +1057,24 @@
           ...(deviceSpecificValidationParams[device.toLowerCase()] || []),
         ];
 
-        if (profileName !== "adult") {
-          paramArr = paramArr.filter((p) => p !== "paln" && p !== "_fw_did");
-          paramForValidation = paramForValidation.filter(
-            (p) => p !== "paln" && p !== "_fw_did"
-          );
-        }
+        // if (profileName !== "adult") {
+        //   paramArr = paramArr.filter((p) => p !== "paln" && p !== "_fw_did");
+        //   paramForValidation = paramForValidation.filter(
+        //     (p) => p !== "paln" && p !== "_fw_did"
+        //   );
+        // }
 
-        if (deviceAdTracking === "disabled") {
-          paramArr = paramArr.filter((p) => p !== "paln" && p !== "_fw_did");
-          paramForValidation = paramForValidation.filter(
-            (p) => p !== "paln" && p !== "_fw_did"
-          );
-        }
+        // if (deviceAdTracking === "disabled") {
+        //   paramArr = paramArr.filter((p) => p !== "paln" && p !== "_fw_did");
+        //   paramForValidation = paramForValidation.filter(
+        //     (p) => p !== "paln" && p !== "_fw_did"
+        //   );
+        // }
 
         let count1 = 1;
         let count2 = 1;
 
+        let fwDidStatus = false;
         for (var i = 0; i < paramArr.length; i++) {
           var adRequestParam = paramArr[i];
           var actualParamValue = "";
@@ -907,6 +1093,8 @@
             if (adRequestParam === "hostvalue") {
               const { protocol, hostname } = url;
               actualParamValue = `${protocol}//${hostname}`;
+            } else if(adRequestParam ===  "_fw_did" || adRequestParam ===  "paln" ){
+                fwDidStatus = true;
             } else {
               adRequestParam =
                 "Parameter " + adRequestParam + " is not present in the url";
@@ -923,8 +1111,7 @@
               deviceAdTracking,
               region
             );
-            console.log("actualParamvalue is " + actualParamValue);
-            validateParam(
+              validateParam(
               adRequestParam,
               actualParamValue,
               expectedParam,
@@ -936,13 +1123,42 @@
           } else {
             var table1 = document.getElementById("tableBody2");
             var rowrow = document.createElement("tr");
-            validateAdditionParam(
-              adRequestParam,
-              actualParamValue,
-              count2,
-              table1,
-              rowrow
-            );
+
+            if(adRequestParam === '_fw_did'){
+              validateFwDidValue(
+                adRequestParam,
+                actualParamValue,
+                expectedParam,
+                count2,
+                table1,
+                rowrow,
+                fwDidStatus,
+                deviceAdTracking,
+                profileName,
+                device
+              )
+            } else if(adRequestParam === 'paln'){
+              validatePalnValue(
+                adRequestParam,
+                actualParamValue,
+                expectedParam,
+                count2,
+                table1,
+                rowrow,
+                fwDidStatus,
+                deviceAdTracking,
+                profileName,
+                device
+              )
+            } else { 
+                validateAdditionParam(
+                adRequestParam,
+                actualParamValue,
+                count2,
+                table1,
+                rowrow
+              );
+            }
             count2++;
           }
         }
@@ -951,3 +1167,5 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
+<!DOCTYPE html>
+
